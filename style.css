@@ -4,7 +4,7 @@
     margin: 0;
 }
 body{
-     background-color: aqua;
+    background-color: aqua;
 }
 nav{
     
@@ -13,7 +13,8 @@ nav{
     font-size: 20px;
     display: flex;
     align-items: center;
-     justify-content: center;
+    justify-content: center;
+    
     padding: 0 10px;
 }
 nav ul{
@@ -21,8 +22,10 @@ nav ul{
 }
 .gamesection{
     display: flex;
+    flex-direction: row;
     justify-content: center;
     margin: 15px;
+    background-color: aqua;
 }
 .game{
     display: grid;
@@ -30,6 +33,7 @@ nav ul{
     grid-template-rows: repeat(3,12vw);
     font-family: "Oswald", sans-serif;
     position: relative;
+    
 }
 .line{
     width: 0vw;
@@ -55,6 +59,7 @@ nav ul{
 .imgbox img{
     width: 0px;
     transition: width 1s ease-in-out;
+    background: radial-gradient(circle,#ffffff 0%,#000000 100%);
 }
 
 .ri-0{
