@@ -89,6 +89,11 @@ border-top: 0px;
 }
 @media  screen and (max-width:700px){
     .gamesection{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         flex-wrap: wrap;
     }
     .gameinfo{
