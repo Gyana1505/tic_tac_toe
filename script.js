@@ -21,15 +21,15 @@ let win=[
 ]
 win.forEach(ele=>{
     if((spantext[ele[0]].innerText===spantext[ele[1]].innerText) && (spantext[ele[1]].innerText===spantext[ele[2]].innerText) && (spantext[ele[0]].innerText!=="")){
-       //document.querySelector(".infor").innerText=spantext[ele[0]].innerText + " won"
+    //    document.querySelector(".infor").innerText=spantext[ele[0]].innerText + " won"
        
        document.querySelector(".imgbox").getElementsByTagName("img")[0].style.width="150px"
        document.querySelector(".line").style.width="30vw"
        document.querySelector(".line").style.transform=`translate(${ele[3]}vw, ${ele[4]}vw) rotate(${ele[5]}deg)`
        over=true
-       document.getElementsByClassName("box").eve ="disebled"
+       
        gameOver.play()
-        setTimeout(() => {
+       setTimeout(() => {
         document.querySelector(".infor").innerText=spantext[ele[0]].innerText + " won"
         document.getElementById("playGame").style.display="none"
        }, 1000);
@@ -41,19 +41,23 @@ let allbox=document.getElementsByClassName("box")
 Array.from(allbox).forEach(ele=>{
     let innerte=ele.querySelector(".boxtext")
     ele.addEventListener("click",()=>{
-        if(innerte.innerText===''){
+        if(innerte.innerText==='' && !over){
             innerte.innerText=turn
            turn= turnChange()
             tuen.play()
             checkWin()
              if(!over){
             document.getElementsByClassName("infor")[0].innerText="turn for"+turn
-            }
+             }
         }
     })
      
 })
 reset.addEventListener('click',()=>{
+    let sty=document.getElementById("playGame")
+    // if(document.getElementById("playGame").style.display="none"){
+    //     document.getElementById("playGame").style.display="block"
+    // }
     document.getElementById("playGame").style.display="grid"
     let spantext=document.querySelectorAll(".boxtext")
     Array.from(spantext).forEach(e=>{
