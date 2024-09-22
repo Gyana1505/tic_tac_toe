@@ -21,7 +21,7 @@ let win=[
 ]
 win.forEach(ele=>{
     if((spantext[ele[0]].innerText===spantext[ele[1]].innerText) && (spantext[ele[1]].innerText===spantext[ele[2]].innerText) && (spantext[ele[0]].innerText!=="")){
-       document.querySelector(".infor").innerText=spantext[ele[0]].innerText + " won"
+       //document.querySelector(".infor").innerText=spantext[ele[0]].innerText + " won"
        
        document.querySelector(".imgbox").getElementsByTagName("img")[0].style.width="150px"
        document.querySelector(".line").style.width="30vw"
@@ -29,6 +29,10 @@ win.forEach(ele=>{
        over=true
        document.getElementsByClassName("box").eve ="disebled"
        gameOver.play()
+        setTimeout(() => {
+        document.querySelector(".infor").innerText=spantext[ele[0]].innerText + " won"
+        document.getElementById("playGame").style.display="none"
+       }, 1000);
     }
 })
 
@@ -50,6 +54,7 @@ Array.from(allbox).forEach(ele=>{
      
 })
 reset.addEventListener('click',()=>{
+    document.getElementById("playGame").style.display="grid"
     let spantext=document.querySelectorAll(".boxtext")
     Array.from(spantext).forEach(e=>{
         e.innerText=""
